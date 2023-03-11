@@ -19,5 +19,5 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 ## macOS
 
 ```
-# todo
+curl https://raw.githubusercontent.com/hiryamada/create-sp/main/setup-macos.sh |bash
 ```
