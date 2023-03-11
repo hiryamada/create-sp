@@ -28,4 +28,5 @@ done
     printf "export AZURE_CLIENT_CERTIFICATE_PATH='%s'\n" '~/.azdev/sp.pem'
     printf "export AZDEV_SP_NAME='%s'\n" "$spname"
     printf "export AZDEV_SP_OBJECT_ID='%s'\n" "$spid"
+    printf "unset AZURE_CLIENT_SECRET\n"
 ) > ~/.azdev/env.sh
