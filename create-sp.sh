@@ -23,9 +23,9 @@ done
 
 # create ~/.azdev/env.sh
 (
-    printf "AZURE_CLIENT_ID='%s'\n" $(jq -j '.appId' <<< "$spjson")
-    printf "AZURE_TENANT_ID='%s'\n" $(jq -j '.tenant' <<< "$spjson")
-    printf "AZURE_CLIENT_CERTIFICATE_PATH='%s'\n" '~/.azdev/sp.pem'
-    printf "AZDEV_SP_NAME='%s'\n" "$spname"
-    printf "AZDEV_SP_OBJECT_ID='%s'\n" "$spid"
+    printf "export AZURE_CLIENT_ID='%s'\n" $(jq -j '.appId' <<< "$spjson")
+    printf "export AZURE_TENANT_ID='%s'\n" $(jq -j '.tenant' <<< "$spjson")
+    printf "export AZURE_CLIENT_CERTIFICATE_PATH='%s'\n" '~/.azdev/sp.pem'
+    printf "export AZDEV_SP_NAME='%s'\n" "$spname"
+    printf "export AZDEV_SP_OBJECT_ID='%s'\n" "$spid"
 ) > ~/.azdev/env.sh
