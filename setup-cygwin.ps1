@@ -8,4 +8,14 @@ Import-Module "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
 refreshenv
 
 # install required software
-choco install -y azure-cli jq
+choco install -y cygwin azure-cli jq
+
+# log in to Azure
+refreshenv
+az login
+
+# create new sp
+& "C:\tools\cygwin\bin\bash.exe" --login -i -c 'curl https://raw.githubusercontent.com/hiryamada/create-sp/main/create-sp.sh |bash'
+
+# load sp in .bashrc
+& "C:\tools\cygwin\bin\bash.exe" --login -i -c 'curl https://raw.githubusercontent.com/hiryamada/create-sp/main/load-env-in-bashrc.sh |bash'
